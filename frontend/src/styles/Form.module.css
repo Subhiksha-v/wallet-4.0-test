@@ -1,0 +1,26 @@
+.cardHeader {
+  background-color: #e9ecef; /* Light background for card headers */
+  color: #343a40; /* Dark text color for card headers */
+  font-weight: bold;
+  border-bottom: 1px solid #dee2e6; /* Light border */
+  /* Add any other specific styles for card headers here */
+}
+
+/* Add styles for other form elements as needed to match screenshots */
+
+/* Style for the Ordered Items table */
+.orderedItemsTable th {
+  background-color: #e9ecef; /* Light header background */
+  color: #343a40; /* Dark text color */
+  font-weight: bold;
+}
+
+.orderedItemsTable td {
+  vertical-align: middle; /* Vertically align content in cells */
+}
+
+.orderedItemsTable .form-control, .orderedItemsTable .form-select {
+    height: calc(1.5em + .5rem + 2px); /* Adjust height for sm inputs */
+    padding: .25rem .5rem;
+    font-size: .875rem;
+} 

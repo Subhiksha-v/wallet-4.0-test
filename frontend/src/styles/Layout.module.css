@@ -1,0 +1,248 @@
+.layout {
+  display: flex;
+  flex-direction: column; /* Changed to column to stack header and main content vertically */
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Light background for the whole app */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff; /* White background for sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.sidebarHeader {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.sidebarHeader h1 {
+  color: #333; /* Darker text for header */
+  font-size: 1.25rem; /* Adjust font size */
+  font-weight: 600;
+}
+
+.sidebarContent {
+  flex-grow: 1;
+}
+
+.sidebarNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarNavItem {
+  margin-bottom: 0.5rem;
+}
+
+.sidebarNavLink {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #555; /* Default link color */
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s;
+  margin-bottom: 5px;
+}
+
+.sidebarNavLink:hover {
+  background-color: #f0f2f5; /* Light hover background */
+  color: #007bff; /* Primary color on hover */
+}
+
+.activeSidebarItem {
+  background-color: #e6f2ff; /* Light blue for active item */
+  color: #007bff; /* Primary color for active item */
+  font-weight: 600;
+}
+
+.mainContent {
+  display: flex; /* Keep display flex for sidebar and content */
+  flex-grow: 1;
+}
+
+.header {
+  background-color: #ffffff; /* White background for header */
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.headerLeft,
+.headerCenter,
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.headerLeft {
+  flex: 0 0 auto; /* Don't grow, shrink based on content */
+}
+
+.headerCenter {
+  flex-grow: 1; /* Take available space */
+  justify-content: center; /* Center the workflow navigation */
+}
+
+.headerRight {
+  flex: 0 0 auto; /* Don't grow, shrink based on content */
+}
+
+.projectInfo {
+  display: flex;
+  align-items: center;
+}
+
+.projectLogo {
+  height: 30px;
+  margin-right: 10px;
+  filter: none; /* Remove filter as background is white */
+}
+
+.projectName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333; /* Dark color for project name */
+}
+
+.topNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.topNavItem {
+  /* No specific styles needed here, button will handle it */
+}
+
+.topNavLink {
+  background: none;
+  border: none;
+  padding: 8px 0px;
+  cursor: pointer;
+  color: #555; /* Dark color for inactive navigation links */
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+
+.topNavLink:hover {
+  color: #007bff; /* Primary color on hover */
+}
+
+.activeTopNav {
+  color: #007bff; /* Primary color for active tab */
+  font-weight: 600;
+  position: relative;
+}
+
+.activeTopNav::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px; /* Adjust position for a subtle underline */
+  height: 2px;
+  background-color: #007bff;
+  border-radius: 1px;
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  color: #555; /* Dark icon color */
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 15px;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.iconButton:hover {
+  background-color: #f0f2f5; /* Light hover background */
+  color: #007bff;
+}
+
+.dropdown > .btn-link {
+  color: #1F2937; /* Dark color for the user name dropdown text */
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 8px 10px;
+  transition: background-color 0.2s;
+}
+
+.dropdown > .btn-link:hover {
+  background-color: #f0f2f5; /* Subtle hover background */
+  border-radius: 4px;
+}
+
+.searchInput {
+  border-radius: 0.25rem 0 0 0.25rem; /* Rounded left corner */
+  border: 1px solid #6c757d;
+  background-color: #495057;
+  color: #fff;
+}
+
+.searchInput::placeholder {
+  color: #adb5bd; /* Lighter placeholder text */
+}
+
+.searchInput:focus {
+  background-color: #5a6268;
+  border-color: #007bff;
+  box-shadow: none;
+}
+
+.searchBox .input-group-text {
+  border-radius: 0 0.25rem 0.25rem 0; /* Rounded right corner */
+  background-color: #6c757d;
+  border: 1px solid #6c757d;
+  color: #fff;
+}
+
+.searchBox .input-group-text:hover {
+  background-color: #5a6268;
+  border-color: #5a6268;
+}
+
+.content {
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto; /* Enable scrolling for content if needed */
+}
+
+/* Add styles for tables if needed */
+.table {
+  /* Ensure default bootstrap table styles work or add custom ones */
+  border-color: #dee2e6; /* Light grey border for tables */
+}
+
+.table th, .table td {
+    border-color: #dee2e6; /* Light grey border for table cells */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05); /* Very light grey for striped rows */
+} 
+
+.nav-tabs{
+  border-bottom: none !important; 
+}

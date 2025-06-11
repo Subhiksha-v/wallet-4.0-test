@@ -1,0 +1,100 @@
+[
+  {
+    "id": "1",
+    "title": "Office Supplies Purchase",
+    "type": "Purchase Requisition",
+    "state": "Created",
+    "vendor": "Office Depot",
+    "value": 1500,
+    "items": 5,
+    "created": "2024-03-15T10:00:00Z",
+    "updated": "2024-03-15T10:00:00Z",
+    "description": "Office supplies for Q2 2024",
+    "department": "HR",
+    "requestedBy": "John Doe",
+    "priority": "Medium"
+  },
+  {
+    "id": "2",
+    "title": "IT Equipment RFQ",
+    "type": "RFQ",
+    "state": "Created",
+    "vendor": null,
+    "value": 50000,
+    "items": 1,
+    "created": "2024-03-14T09:30:00Z",
+    "updated": "2024-03-14T09:30:00Z",
+    "description": "New server infrastructure",
+    "department": "IT",
+    "requestedBy": "Jane Smith",
+    "priority": "High",
+    "prId": "1"
+  },
+  {
+    "id": "3",
+    "title": "Software License BID",
+    "type": "BID",
+    "state": "Created",
+    "vendor": "Microsoft",
+    "value": 25000,
+    "items": 1,
+    "created": "2024-03-13T14:15:00Z",
+    "updated": "2024-03-13T14:15:00Z",
+    "description": "Enterprise software licenses",
+    "department": "IT",
+    "requestedBy": "Mike Johnson",
+    "priority": "High",
+    "rfqId": "2"
+  },
+  {
+    "id": "4",
+    "title": "Marketing Services Contract",
+    "type": "Contract",
+    "state": "Active",
+    "vendor": "Creative Agency Inc",
+    "value": 75000,
+    "items": 1,
+    "created": "2024-03-12T11:20:00Z",
+    "updated": "2024-03-12T11:20:00Z",
+    "description": "Annual marketing services",
+    "department": "Marketing",
+    "requestedBy": "Sarah Wilson",
+    "priority": "Medium",
+    "awardedId": "3"
+  },
+  {
+    "id": "3a48d581-f360-4f12-a596-fdccefea53e2",
+    "OrderedItems": [
+      {
+        "IGST": 2,
+        "SGST": 2,
+        "CGST": 2,
+        "Discount": 2,
+        "Quantity": 2,
+        "UnitPrice": 20000,
+        "ItemName": "Dell Laptop"
+      }
+    ],
+    "BillingAddress": {
+      "BillingAddress": "kejf"
+    },
+    "ShippingAddress": {
+      "ShippingAddress": "kjaf"
+    },
+    "DocDetails": {
+      "PaymentTerms": 2,
+      "CurrencyType": "USD",
+      "TransactionType": "Public",
+      "Date": "2025-06-04",
+      "DocumentNumber": "D-001"
+    },
+    "BasicInfo": {
+      "Plant": "Plant -001"
+    },
+    "OverallTotal": 40004,
+    "type": "PR",
+    "state": "pr-created",
+    "created": "2025-06-09T10:47:06.634Z",
+    "updated": "2025-06-09T10:47:06.635Z"
+  }
+]

@@ -1,0 +1,561 @@
+[
+  {
+    "purchasereq": {
+      "_id": "d71fa906-0709-46af-8f21-80bb703810c5",
+      "OrderedItems": [
+        {
+          "Total": 80001,
+          "IGST": 2,
+          "SGST": 2,
+          "CGST": 2,
+          "Discount": 5,
+          "Quantity": 2,
+          "UnitPrice": 40000,
+          "ItemName": "Dell Laptop"
+        },
+        {
+          "Total": 200001,
+          "IGST": 2,
+          "SGST": 2,
+          "CGST": 2,
+          "Discount": 5,
+          "Quantity": 2,
+          "UnitPrice": 100000,
+          "ItemName": "Mac  lap"
+        }
+      ],
+      "BillingAddress": {
+        "BillingAddress": "Indira Nagar , Bengaluru"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "Domlur , Bengaluru"
+      },
+      "DocDetails": {
+        "PaymentTerms": 2,
+        "CurrencyType": "INR",
+        "TransactionType": "Private",
+        "Date": "Tue Jun 10 2025 00:00:00 GMT+0530 (India Standard Time)",
+        "DocumentNumber": "DOC-001"
+      },
+      "BasicInfo": {
+        "Plant": "Plant -001"
+      },
+      "OverallTotal": 280002,
+      "type": "PURCHASEREQ",
+      "updated": "2025-06-11T06:34:06.126Z"
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "48fb21af-2ea9-4109-96de-e5c028c5a4c4",
+      "BasicInfo.Plant": "Plant A",
+      "DocDetails.DocumentNumber": "PR-1000",
+      "DocDetails.Date": "2025-06-01",
+      "DocDetails.TransactionType": "Public",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "29d9d640-efe9-447a-8199-096a7d3257ba",
+      "BasicInfo.Plant": "Plant B",
+      "DocDetails.DocumentNumber": "PR-1001",
+      "DocDetails.Date": "2025-06-02",
+      "DocDetails.TransactionType": "Private",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "c58a72ef-f7a5-4151-b58c-e578906a18c0",
+      "BasicInfo.Plant": "Plant C",
+      "DocDetails.DocumentNumber": "PR-1002",
+      "DocDetails.Date": "2025-06-03",
+      "DocDetails.TransactionType": "Protected",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "6b35fe66-3ef0-438d-ab64-18d0c64ff5bc",
+      "BasicInfo.Plant": "Plant D",
+      "DocDetails.DocumentNumber": "PR-1003",
+      "DocDetails.Date": "2025-06-04",
+      "DocDetails.TransactionType": "Public",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "c2d82ce9-5a08-4b4f-b58d-ae1f94daf983",
+      "BasicInfo.Plant": "Plant E",
+      "DocDetails.DocumentNumber": "PR-1004",
+      "DocDetails.Date": "2025-06-05",
+      "DocDetails.TransactionType": "Protected",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "8e994844-7fef-4d29-9a15-e43bf658b775",
+      "BasicInfo.Plant": "Plant F",
+      "DocDetails.DocumentNumber": "PR-1005",
+      "DocDetails.Date": "2025-06-06",
+      "DocDetails.TransactionType": "Private",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "6f874e5d-bb09-4471-bbc6-4ac6c86a50f8",
+      "BasicInfo.Plant": "Plant G",
+      "DocDetails.DocumentNumber": "PR-1006",
+      "DocDetails.Date": "2025-06-07",
+      "DocDetails.TransactionType": "Protected",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "6740c379-a285-4efc-bb8a-6a60b2e741c3",
+      "BasicInfo.Plant": "Plant H",
+      "DocDetails.DocumentNumber": "PR-1007",
+      "DocDetails.Date": "2025-06-08",
+      "DocDetails.TransactionType": "Public",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "f2a88de6-cf71-4447-a33e-f212a830dacf",
+      "BasicInfo.Plant": "Plant I",
+      "DocDetails.DocumentNumber": "PR-1008",
+      "DocDetails.Date": "2025-06-09",
+      "DocDetails.TransactionType": "Protected",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:41:04.982Z",
+      "updated": "2025-06-11T06:41:04.982Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "a9b670ab-9607-45ae-9d90-ad73118dcbb5",
+      "BasicInfo.Plant": "Plant A",
+      "DocDetails.DocumentNumber": "PR-1000",
+      "DocDetails.Date": "2025-06-01",
+      "DocDetails.TransactionType": "Public",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "428c4730-e71c-4828-8dcb-3db2f215bcca",
+      "BasicInfo.Plant": "Plant B",
+      "DocDetails.DocumentNumber": "PR-1001",
+      "DocDetails.Date": "2025-06-02",
+      "DocDetails.TransactionType": "Private",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "f9630e00-a834-4389-ba9e-43d0abc4f958",
+      "BasicInfo.Plant": "Plant C",
+      "DocDetails.DocumentNumber": "PR-1002",
+      "DocDetails.Date": "2025-06-03",
+      "DocDetails.TransactionType": "Protected",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "6ae98835-a788-456e-adfe-98ce989c7eaf",
+      "BasicInfo.Plant": "Plant D",
+      "DocDetails.DocumentNumber": "PR-1003",
+      "DocDetails.Date": "2025-06-04",
+      "DocDetails.TransactionType": "Public",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "1412a90e-8f79-4c7e-9351-907b4191e564",
+      "BasicInfo.Plant": "Plant E",
+      "DocDetails.DocumentNumber": "PR-1004",
+      "DocDetails.Date": "2025-06-05",
+      "DocDetails.TransactionType": "Protected",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "d2a5129c-88ba-4954-8d1b-73eca6317466",
+      "BasicInfo.Plant": "Plant F",
+      "DocDetails.DocumentNumber": "PR-1005",
+      "DocDetails.Date": "2025-06-06",
+      "DocDetails.TransactionType": "Private",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "f7e79531-ec6e-431c-a29d-8da2012db646",
+      "BasicInfo.Plant": "Plant G",
+      "DocDetails.DocumentNumber": "PR-1006",
+      "DocDetails.Date": "2025-06-07",
+      "DocDetails.TransactionType": "Protected",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "05c1ab46-72cd-4999-9a57-7a2475a5f97f",
+      "BasicInfo.Plant": "Plant H",
+      "DocDetails.DocumentNumber": "PR-1007",
+      "DocDetails.Date": "2025-06-08",
+      "DocDetails.TransactionType": "Public",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "592e3858-a84a-4cb8-bdbd-21fda74f944a",
+      "BasicInfo.Plant": "Plant I",
+      "DocDetails.DocumentNumber": "PR-1008",
+      "DocDetails.Date": "2025-06-09",
+      "DocDetails.TransactionType": "Protected",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 5,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 508,
+      "OverallTotal": 508,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  },
+  {
+    "purchasereq": {
+      "_id": "ca98c1d1-e57c-49d4-815c-decc61182a04",
+      "BasicInfo.Plant": "Plant J",
+      "DocDetails.DocumentNumber": "PR-1009",
+      "DocDetails.Date": "2025-06-10",
+      "DocDetails.TransactionType": "Standard",
+      "DocDetails.CurrencyType": "INR",
+      "DocDetails.PaymentTerms": "Net 30",
+      "ShippingAddress.ShippingAddress": "123 Industrial Rd",
+      "BillingAddress.BillingAddress": "456 Corporate Blvd",
+      "OrderedItems[0].ItemName": "Item A",
+      "OrderedItems[0].UnitPrice": 100,
+      "OrderedItems[0].Quantity": 4,
+      "OrderedItems[0].Discount": 10,
+      "OrderedItems[0].CGST": 9,
+      "OrderedItems[0].SGST": 9,
+      "OrderedItems[0].IGST": 0,
+      "OrderedItems[0].Total": 408,
+      "OverallTotal": 408,
+      "created": "2025-06-11T06:43:17.402Z",
+      "updated": "2025-06-11T06:43:17.402Z",
+      "SystemProperties": {
+        "P_SubState": "purchasereq:purchasereq-created"
+      }
+    }
+  }
+]
