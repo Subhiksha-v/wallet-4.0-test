@@ -51,16 +51,9 @@ const DataTable = ({
 
     const query = searchQuery.toLowerCase();
     return getSortedData().filter(item => {
-      return columns.some(column => {
-        if (column.key === 'actions') return false;
-
-        const getValue = (obj, path) => {
-          return path.split('.').reduce((o, i) => (o ? o[i] : null), obj);
-        };
-
-        const value = getValue(item, column.key);
-        return String(value).toLowerCase().includes(query);
-      });
+      // Search specifically in DocDetails.DocumentNumber
+      const documentNumber = item["DocDetails.DocumentNumber"]?.toLowerCase() || '';
+      return documentNumber.includes(query);
     });
   };
 
@@ -78,7 +71,7 @@ const DataTable = ({
           <input
             type="text"
             className="form-control"
-            placeholder="Search..."
+            placeholder="Search Document Number"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />

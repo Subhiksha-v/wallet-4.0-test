@@ -383,12 +383,13 @@ const purchaseRequisitionStateMachine = {
   "smID": "public:0xdfba41efa39db71652f45453922135caf84984cc5d95835a18f6d6e729dae561"
 };
 
-const { actionMaps } = parseStateMachine(purchaseRequisitionStateMachine);
+// Parse the purchase requisition state machine for initial action maps
+const { actionMaps: initialActionMaps } = parseStateMachine(purchaseRequisitionStateMachine);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ProcurementProvider initialActionMaps={actionMaps}>
+      <ProcurementProvider initialActionMaps={initialActionMaps}>
         <App />
       </ProcurementProvider>
     </BrowserRouter>

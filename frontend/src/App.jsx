@@ -31,10 +31,10 @@ function App() {
 
         {/* Placeholder Routes for Other Workflows (adjust as needed) */}
         {/* Example: Contract Workflow */}
-        <Route path="/procurement/contracts" element={<DocumentList />} /> {/* Example list */}
-        <Route path="/procurement/contracts/create" element={<DocumentForm />} /> {/* Example add */}
-         <Route path="/procurement/contracts/upload" element={<UploadDocument />} /> {/* Example upload */}
-        <Route path="/procurement/contracts/:id/edit" element={<DocumentForm />} /> {/* Example edit */}
+        <Route path="/procurement/contract" element={<DocumentList />} /> {/* Example list */}
+        <Route path="/procurement/contract/create" element={<DocumentForm />} /> {/* Example add */}
+         <Route path="/procurement/contract/upload" element={<UploadDocument />} /> {/* Example upload */}
+        <Route path="/procurement/contract/:id/edit" element={<DocumentForm />} /> {/* Example edit */}
 
          {/* Example: Orders Workflow */}
         <Route path="/procurement/orders" element={<DocumentList />} /> {/* Example list */}
@@ -43,16 +43,16 @@ function App() {
         <Route path="/procurement/orders/:id/edit" element={<DocumentForm />} /> {/* Example edit */}
 
          {/* Example: Invoices Workflow */}
-        <Route path="/procurement/invoices" element={<DocumentList />} /> {/* Example list */}
-        <Route path="/procurement/invoices/create" element={<DocumentForm />} /> {/* Example add */}
-         <Route path="/procurement/invoices/upload" element={<UploadDocument />} /> {/* Example upload */}
-        <Route path="/procurement/invoices/:id/edit" element={<DocumentForm />} /> {/* Example edit */}
+        <Route path="/procurement/invoice" element={<DocumentList />} /> {/* Example list */}
+        <Route path="/procurement/invoice/create" element={<DocumentForm />} /> {/* Example add */}
+         <Route path="/procurement/invoice/upload" element={<UploadDocument />} /> {/* Example upload */}
+        <Route path="/procurement/invoice/:id/edit" element={<DocumentForm />} /> {/* Example edit */}
 
          {/* Example: Payment Workflow */}
-        <Route path="/procurement/payments" element={<DocumentList />} /> {/* Example list */}
-        <Route path="/procurement/payments/create" element={<DocumentForm />} /> {/* Example add */}
-         <Route path="/procurement/payments/upload" element={<UploadDocument />} /> {/* Example upload */}
-        <Route path="/procurement/payments/:id/edit" element={<DocumentForm />} /> {/* Example edit */}
+        <Route path="/procurement/payment" element={<DocumentList />} /> {/* Example list */}
+        <Route path="/procurement/payment/create" element={<DocumentForm />} /> {/* Example add */}
+         <Route path="/procurement/payment/upload" element={<UploadDocument />} /> {/* Example upload */}
+        <Route path="/procurement/payment/:id/edit" element={<DocumentForm />} /> {/* Example edit */}
 
         {/* Add more routes for other workflows as they are implemented */}
 

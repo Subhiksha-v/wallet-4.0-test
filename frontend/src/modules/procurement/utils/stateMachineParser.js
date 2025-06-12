@@ -7,6 +7,20 @@ const parseStateMachine = (stateMachine) => {
     return { sidebarItems, actionMaps };
   }
 
+  // Helper function to extract schema type
+  const getSchemaType = (schema) => {
+    if (!schema) return null;
+    const match = schema.match(/@schema\/([^:]+)/);
+    return match ? match[1] : null;
+  };
+
+  // Helper function to check if state should be rendered
+  const shouldRenderState = (state) => {
+    const schemaType = getSchemaType(state.Schema);
+    const hasFlip = state.Props && state.Props.Flip !== undefined && state.Props.Flip !== null;
+    return hasFlip;
+  };
+
   let currentStateName = stateMachine.StartAt;
   let currentState = stateMachine.States[currentStateName];
 
@@ -15,7 +29,7 @@ const parseStateMachine = (stateMachine) => {
     const workflowPath = currentStateName.toLowerCase().replace(/[^a-z0-9]/g, ''); // Simple slug for workflowPath
 
     // Handle SubStates
-    if (currentState.SubStates && typeof currentState.SubStates === 'object') {
+    if (currentState.SubStates && typeof currentState.SubStates === 'object' && Object.keys(currentState.SubStates).length > 0) {
       const subStateKeys = Object.keys(currentState.SubStates);
       
       // Find the start substate and traverse
@@ -29,6 +43,8 @@ const parseStateMachine = (stateMachine) => {
       while(currentSubStateName && currentState.SubStates[currentSubStateName] && !traversedSubStates.includes(currentSubStateName)) {
         const subState = currentState.SubStates[currentSubStateName];
         const subStateLabel = subState.Desc || currentSubStateName;
+        
+        // Add the substate to sidebar items
         sidebarItems.push({
           label: `${baseLabel} - ${subStateLabel}`,
           state: `${workflowPath}-${currentSubStateName.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
@@ -44,21 +60,27 @@ const parseStateMachine = (stateMachine) => {
         
         traversedSubStates.push(currentSubStateName);
         currentSubStateName = subState.NextState;
+
+        // REMOVED: The problematic code that was adding duplicate entries
+        // The main loop will handle adding the next states properly
       }
     } else {
       // Handle main states without sub-states
-      sidebarItems.push({
-        label: baseLabel,
-        state: workflowPath,
-        workflowPath: workflowPath
-      });
+      // Check if state should be rendered based on conditions
+      if (shouldRenderState(currentState)) {
+        sidebarItems.push({
+          label: baseLabel,
+          state: workflowPath,
+          workflowPath: workflowPath
+        });
 
-      // Store actions for this main state
-      const currentActions = {
-        edit: currentState.Props && currentState.Props.Edit,
-        flip: currentState.Props && currentState.Props.Flip,
-      };
-      actionMaps[workflowPath] = currentActions;
+        // Store actions for this main state
+        const currentActions = {
+          edit: currentState.Props && currentState.Props.Edit,
+          flip: currentState.Props && currentState.Props.Flip,
+        };
+        actionMaps[workflowPath] = currentActions;
+      }
     }
 
     // Move to the next main state
@@ -72,5 +94,4 @@ const parseStateMachine = (stateMachine) => {
 
   return { sidebarItems, actionMaps };
 };
-
 export default parseStateMachine; 
