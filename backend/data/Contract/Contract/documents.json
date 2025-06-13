@@ -1,0 +1,82 @@
+[
+  {
+    "Contract": {
+      "_id": "0fd430df-4cf4-4d5a-9a81-276f7b519a51",
+      "OrderedItems": [
+        {
+          "Total": 60004,
+          "IGST": 2,
+          "SGST": 2,
+          "CGST": 2,
+          "Discount": 2,
+          "Quantity": 3,
+          "UnitPrice": 20000,
+          "ItemName": "Dell Laptop"
+        }
+      ],
+      "BillingAddress": {
+        "BillingAddress": "Domlur"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "Domlur"
+      },
+      "DocDetails": {
+        "PaymentTerms": 2,
+        "CurrencyType": "INR",
+        "TransactionType": "Public",
+        "Date": "Thu Jun 12 2025 00:00:00 GMT+0530 (India Standard Time)",
+        "DocumentNumber": "DOC-001",
+        "State": "Contract",
+        "SubState": "Contract"
+      },
+      "BasicInfo": {
+        "Plant": "Plant -001"
+      },
+      "OverallTotal": 60004,
+      "type": "CONTRACT",
+      "updated": "2025-06-13T05:11:27.965Z"
+    }
+  },
+  {
+    "Contract": {
+      "_id": "f4f40b18-1352-40f5-8050-5b0342e32eff",
+      "OrderedItems": [
+        {
+          "ItemName": "Item A",
+          "UnitPrice": 100,
+          "Quantity": 5,
+          "Discount": 10,
+          "CGST": 9,
+          "SGST": 9,
+          "IGST": 0,
+          "Total": 508
+        }
+      ],
+      "BillingAddress": {
+        "BillingAddress": "456 Corporate Blvd"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "123 Industrial Rd"
+      },
+      "DocDetails": {
+        "PaymentTerms": 1,
+        "CurrencyType": "INR",
+        "TransactionType": "Public",
+        "Date": "2025-06-01",
+        "DocumentNumber": "PR-1000",
+        "State": "Contract",
+        "SubState": "Contract"
+      },
+      "BasicInfo": {
+        "Plant": "Plant A"
+      },
+      "OverallTotal": 508,
+      "created": "2025-06-13T05:18:17.275Z",
+      "updated": "2025-06-13T05:18:17.275Z",
+      "SystemProperties": {
+        "P_SubState": "PurchaseReq:Created"
+      },
+      "type": "CONTRACT"
+    }
+  }
+]

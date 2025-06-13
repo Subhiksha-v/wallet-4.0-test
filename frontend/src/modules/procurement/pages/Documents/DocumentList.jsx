@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { getDocuments, deleteDocument } from '../../services/documentService';
 import DataTable from '../../../../components/DataTable';
 import { FaEye, FaPencilAlt, FaTrashAlt } from 'react-icons/fa'; // Import Font Awesome icons
+import StateTransitionButton from '../../components/StateTransitionButton';
+import { stateMachines } from '../../../../components/AppLayout';
 
 const DocumentList = () => {
   const [documents, setDocuments] = useState([]);
@@ -16,8 +18,25 @@ const DocumentList = () => {
   const workflowType = location.pathname.split('/')[2];
   const queryParams = new URLSearchParams(location.search);
   const stateParam = queryParams.get('state');
-const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : stateParam; // Default to created state
+  const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : stateParam; // Default to created state
   const substate = stateFilter; // substate will be the same as stateFilter
+
+  // Define the mapping from URL workflow type to state machine key (consistent with AppLayout)
+  const workflowMap = {
+    'purchasereq': 'Purchase Requisition',
+    'prshortlist' : 'Purchase Requisition',
+    'rfq' : 'Purchase Requisition',
+    'bid' : 'Purchase Requisition',
+    'awarded' : 'Purchase Requisition',
+    'contract': 'Contract',
+    'orders': 'Orders',
+    'invoice': 'Invoice',
+    'payment': 'Payment',
+    // Add other mappings as needed
+  };
+
+  // Get the state machine key using the map, default to the URL type if not found
+  const mappedWorkflowType = workflowMap[workflowType.toLowerCase()] || workflowType;
 
   // Memoize handleDelete, handleView, handleEdit to prevent unnecessary re-renders
   const handleDelete = useCallback(async (id) => {
@@ -85,6 +104,22 @@ const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : state
               if (col.dataType === 'date') {
                 return val ? new Date(val).toLocaleDateString() : '—';
               } else if (col.dataType === 'number') {
+                // Handle Payment Terms - remove currency symbol
+                if (col.dataIndex === 'DocDetails.PaymentTerms') {
+                  return val != null ? val.toLocaleString() : '—';
+                }
+                // Handle Overall Total - dynamic currency symbol
+                if (col.dataIndex === 'OverallTotal') {
+                  const currencyType = item["DocDetails.CurrencyType"]
+                  if (currencyType === 'INR') {
+                    return val != null ? `₹${val.toLocaleString()}` : '—';
+                  } else if (currencyType === 'USD') {
+                    return val != null ? `$${val.toLocaleString()}` : '—';
+                  }
+                  // Default for other currencies or if currencyType is not found
+                  return val != null ? val.toLocaleString() : '—';
+                }
+                // Existing number formatting for other number types
                 return val != null ? `$${val.toLocaleString()}` : '—';
               }
               return val != null ? val : '—';
@@ -97,24 +132,33 @@ const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : state
             label: 'Actions',
             align: 'center',
             render: (value, item) => (
-              <div className="d-flex justify-content-center">
+              <div className="d-flex">
+                <StateTransitionButton
+                  currentState={workflowType}
+                  currentSubstate={substate}
+                  workflowType={workflowType}
+                  stateMachine={stateMachines[mappedWorkflowType]}
+                  documentId={item._id}
+                  documentData={item}
+                  navigate={navigate}
+                />
                 <button
                   className="btn btn-link text-primary"
-                  onClick={() => handleView(item._id)} // Use item._id for actions
+                  onClick={() => handleView(item._id)}
                   title="View"
                 >
                   <FaEye style={{ color: 'black' }} />
                 </button>
                 <button
                   className="btn btn-link text-warning"
-                  onClick={() => handleEdit(item._id)} // Use item._id for actions
+                  onClick={() => handleEdit(item._id)}
                   title="Edit"
                 >
                   <FaPencilAlt style={{ color: 'black' }} />
                 </button>
                 <button
                   className="btn btn-link text-danger"
-                  onClick={() => handleDelete(item._id)} // Use item._id for actions
+                  onClick={() => handleDelete(item._id)}
                   title="Delete"
                 >
                   <FaTrashAlt style={{ color: 'black' }} />
@@ -162,8 +206,11 @@ const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : state
     <div>
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="h4 mb-0">
-          Documents
-          {stateFilter && <span className="text-muted ms-2">({workflowType}-{stateFilter})</span>}
+          {stateFilter && (
+            <span className="text-muted ms-2">
+              {workflowType === stateFilter ? workflowType : `${workflowType}-${stateFilter}`}
+            </span>
+          )}
         </h2>
         <div className="d-flex gap-2">
           <button

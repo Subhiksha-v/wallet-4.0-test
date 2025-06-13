@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "Payment": {
+      "_id": "6f189e15-0bc5-4435-8d4a-58258cb46adc",
+      "BasicInfo": {
+        "Plant": "Plant C"
+      },
+      "DocDetails": {
+        "DocumentNumber": "PR-1002",
+        "Date": "2025-06-03",
+        "TransactionType": "Protected",
+        "CurrencyType": "INR",
+        "PaymentTerms": 1,
+        "State": "Payment",
+        "SubState": "Payment"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "123 Industrial Rd"
+      },
+      "BillingAddress": {
+        "BillingAddress": "456 Corporate Blvd"
+      },
+      "OverallTotal": 508,
+      "created": "2025-06-13T05:18:17.275Z",
+      "updated": "2025-06-13T05:18:45.514Z",
+      "SystemProperties": {
+        "P_SubState": "PurchaseReq:Created"
+      },
+      "OrderedItems": [
+        {
+          "ItemName": "Item A",
+          "UnitPrice": 100,
+          "Quantity": 5,
+          "Discount": 10,
+          "CGST": 9,
+          "SGST": 9,
+          "IGST": 0,
+          "Total": 508
+        }
+      ],
+      "type": "PAYMENT"
+    }
+  },
+  {
+    "Payment": {
+      "_id": "00df82b8-68f2-43f2-8302-e9a362097436",
+      "OrderedItems": [
+        {
+          "Total": 400004,
+          "IGST": 2,
+          "SGST": 2,
+          "CGST": 2,
+          "Discount": 2,
+          "Quantity": 2,
+          "UnitPrice": 200000,
+          "ItemName": "Dell Laptop",
+          "Description": ""
+        }
+      ],
+      "BillingAddress": {
+        "BillingAddress": "Domlur"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "Domlur"
+      },
+      "DocDetails": {
+        "PaymentTerms": 2,
+        "CurrencyType": "INR",
+        "TransactionType": "Public",
+        "Date": "2025-06-12T18:30:00.000Z",
+        "DocumentNumber": "DOC-001",
+        "State": "Payment",
+        "SubState": "Payment"
+      },
+      "BasicInfo": {
+        "Plant": "Plant -001"
+      },
+      "OverallTotal": 400004,
+      "type": "PAYMENT"
+    }
+  }
+]

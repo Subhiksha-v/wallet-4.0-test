@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styles from '../styles/Layout.module.css';
 import parseStateMachine from '../modules/procurement/utils/stateMachineParser'; // Import the parser
+import { FaUser } from 'react-icons/fa'; // Import FaUser icon
 
 const PurchaseRequisitionIcon = () => (
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -384,7 +385,7 @@ const purchaseRequisitionStateMachine = {
 };
 
 // Define state machines for each workflow
-const stateMachines = {
+export const stateMachines = {
   'Purchase Requisition': purchaseRequisitionStateMachine,
   'Contract': {
     "_id": "public:0x9763c8c13b934e133819b80374d6fb2a762f20a34f2c4ee03b8ae228d421b548_Contract",
@@ -924,7 +925,7 @@ const stateMachines = {
     "orgParamID": "0x44568D2535f2DEf8fEEC08d5FbC9c8F1ae56D5A7",
     "smID": "public:0x51c7fd54e9079d2789edb5e89110b16df3a2305a339bd5f6f3e498c26964e86d"
 },
-  'Invoices': {
+  'Invoice': {
     "_id": "public:0x0c182241729a93d26631c136faad0938e50df28185a352a6657c57b2238f7325_Invoice",
     "AppType": "CommerceSM",
     "Base_sm": "@statemachine/extendedCommerceSM:public:0x161f0430cae79713cda4e848416f2f561704048d5ac40d6ed0f5829fda2ac1a7",
@@ -1372,7 +1373,7 @@ const majorWorkflows = [
   { name: 'Purchase Requisition', path: '/procurement/PurchaseReq', shortName: 'PurchaseReq', workflowPath: 'PurchaseReq' },
   { name: 'Contract', path: '/procurement/Contract', shortName: 'Contract', workflowPath: 'Contract' },
   { name: 'Orders', path: '/procurement/Orders', shortName: 'Orders', workflowPath: 'Orders' },
-  { name: 'Invoices', path: '/procurement/Invoice', shortName: 'Invoice', workflowPath: 'Invoice' },
+  { name: 'Invoice', path: '/procurement/Invoice', shortName: 'Invoice', workflowPath: 'Invoice' },
   { name: 'Payment', path: '/procurement/Payment', shortName: 'Payment', workflowPath: 'Payment' },
 ];
 
@@ -1510,7 +1511,7 @@ const AppLayout = ({ children }) => {
           <button className={`btn ${styles.iconButton}`} title="Notifications">
             <i className="bi bi-bell"></i>
           </button>
-          <div className="dropdown ms-3">
+          <div className="dropdown">
             <button
               className="btn btn-link"
               type="button"
@@ -1519,7 +1520,7 @@ const AppLayout = ({ children }) => {
               aria-expanded="false"
               style={{ color: '#333', textDecoration: 'none' }}
             >
-              User Name
+              <FaUser className="me-2" />User Name
             </button>
             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
               <li><a className="dropdown-item" href="#" onClick={() => console.log('Logout')}><i className="bi bi-box-arrow-right me-2"></i>Logout</a></li>

@@ -191,4 +191,40 @@ export const awardDocument = async (id, state, substate) => {
   const doc = await getDocumentById(id, state, substate);
   if (!doc) return null;
   return updateDocument(id, { ...doc, state: state, substate: 'awarded' });
+};
+
+// Service function for state transitions
+export const transitionDocumentState = async (id, currentState, currentSubstate, newState, newSubstate) => {
+  try {
+    const doc = await getDocumentById(id, currentState, currentSubstate);
+    if (!doc) {
+      throw new Error('Document not found');
+    }
+
+    // Update the document with new state and substate
+    const updatedDoc = {
+      ...doc,
+      state: newState,
+      substate: newSubstate,
+      updated: new Date().toISOString()
+    };
+
+    // Call the update endpoint
+    const response = await fetch(`${API_BASE_URL}/documents/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedDoc),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to update document state');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error transitioning document state:', error);
+    throw error;
+  }
 }; 

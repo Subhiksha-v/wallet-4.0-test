@@ -1,1 +1,86 @@
-[]
+[
+  {
+    "RFQ": {
+      "_id": "98118105-e814-4914-a6cc-efbc945b5c62",
+      "OrderedItems": [
+        {
+          "ItemName": "Item A",
+          "UnitPrice": 100,
+          "Quantity": 5,
+          "Discount": 10,
+          "CGST": 9,
+          "SGST": 9,
+          "IGST": 0,
+          "Total": 508
+        }
+      ],
+      "BillingAddress": {
+        "BillingAddress": "456 Corporate Blvd"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "123 Industrial Rd"
+      },
+      "DocDetails": {
+        "PaymentTerms": 1,
+        "CurrencyType": "INR",
+        "TransactionType": "Public",
+        "Date": "2025-06-04",
+        "DocumentNumber": "PR-1003",
+        "State": "RFQ",
+        "SubState": "Rejected"
+      },
+      "BasicInfo": {
+        "Plant": "Plant D"
+      },
+      "OverallTotal": 508,
+      "created": "2025-06-13T05:18:17.275Z",
+      "updated": "2025-06-13T05:18:17.275Z",
+      "SystemProperties": {
+        "P_SubState": "PurchaseReq:Created"
+      },
+      "type": "RFQ"
+    }
+  },
+  {
+    "RFQ": {
+      "_id": "09df7215-05eb-4896-bbe1-d5685433c70e",
+      "OrderedItems": [
+        {
+          "ItemName": "Item A",
+          "UnitPrice": 100,
+          "Quantity": 5,
+          "Discount": 10,
+          "CGST": 9,
+          "SGST": 9,
+          "IGST": 0,
+          "Total": 508
+        }
+      ],
+      "BillingAddress": {
+        "BillingAddress": "456 Corporate Blvd"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "123 Industrial Rd"
+      },
+      "DocDetails": {
+        "PaymentTerms": 1,
+        "CurrencyType": "INR",
+        "TransactionType": "Protected",
+        "Date": "2025-06-05",
+        "DocumentNumber": "PR-1004",
+        "State": "RFQ",
+        "SubState": "Rejected"
+      },
+      "BasicInfo": {
+        "Plant": "Plant E"
+      },
+      "OverallTotal": 508,
+      "created": "2025-06-13T05:18:17.275Z",
+      "updated": "2025-06-13T05:18:17.275Z",
+      "SystemProperties": {
+        "P_SubState": "PurchaseReq:Created"
+      },
+      "type": "RFQ"
+    }
+  }
+]

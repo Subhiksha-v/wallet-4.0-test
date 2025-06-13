@@ -100,7 +100,15 @@ const generateHeadersFromData = (data, workflowType) => {
     return [];
   }
 
-  const blacklistedKeys = ['id', 'type', 'updated', '_id', 'created', 'overalltotal', 'ordereditems']; // Case-insensitive check will be used
+  const blacklistedKeys = [
+    'id', 
+    'type', 
+    'updated', 
+    '_id', 
+    'created', 
+    'ordereditems',
+    'systemproperties.p_substate' // Add this to blacklist
+  ]; // Case-insensitive check will be used
   const tempHeaders = {};
 
   // Use the first item to infer columns. Assuming all items have consistent keys.
@@ -135,7 +143,7 @@ const generateHeadersFromData = (data, workflowType) => {
         align = 'right';
       } else if (/^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}:\d{2}\.\d{3}Z)?$/.test(firstItem[key])) { // Basic date check for ISO string or YYYY-MM-DD
         dataType = 'date';
-}
+      }
 
       tempHeaders[key] = {
         title: title,

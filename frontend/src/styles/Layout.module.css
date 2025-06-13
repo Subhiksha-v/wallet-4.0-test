@@ -115,7 +115,8 @@
 .projectName {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #333; /* Dark color for project name */
+  color: #333;
+  margin-left: 8px !important; /* Dark color for project name */
 }
 
 .topNavList {
@@ -126,9 +127,7 @@
   gap: 25px;
 }
 
-.topNavItem {
-  /* No specific styles needed here, button will handle it */
-}
+
 
 .topNavLink {
   background: none;
@@ -148,20 +147,11 @@
 }
 
 .activeTopNav {
+  background-color: #e6f2ff; /* Light blue background for active tab */
   color: #007bff; /* Primary color for active tab */
   font-weight: 600;
-  position: relative;
-}
-
-.activeTopNav::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -5px; /* Adjust position for a subtle underline */
-  height: 2px;
-  background-color: #007bff;
-  border-radius: 1px;
+  padding: 8px 12px; /* Add padding for box effect */
+  border-radius: 5px; /* Rounded corners */
 }
 
 .iconButton {
@@ -171,7 +161,7 @@
   font-size: 1.3rem;
   cursor: pointer;
   padding: 8px;
-  margin-left: 15px;
+  /* margin-left: 15px; */
   border-radius: 50%;
   transition: background-color 0.2s, color 0.2s;
 }

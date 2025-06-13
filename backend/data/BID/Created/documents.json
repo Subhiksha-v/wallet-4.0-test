@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "BID": {
+      "_id": "76ef1293-43a9-4715-a95b-19f967570817",
+      "OrderedItems": [
+        {
+          "ItemName": "Item A",
+          "UnitPrice": 100,
+          "Quantity": 5,
+          "Discount": 10,
+          "CGST": 9,
+          "SGST": 9,
+          "IGST": 0,
+          "Total": 508
+        }
+      ],
+      "BillingAddress": {
+        "BillingAddress": "456 Corporate Blvd"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "123 Industrial Rd"
+      },
+      "DocDetails": {
+        "PaymentTerms": 1,
+        "CurrencyType": "INR",
+        "TransactionType": "Private",
+        "Date": "2025-06-02",
+        "DocumentNumber": "PR-1001",
+        "State": "BID",
+        "SubState": "Created"
+      },
+      "BasicInfo": {
+        "Plant": "Plant B"
+      },
+      "OverallTotal": 508,
+      "created": "2025-06-13T05:18:17.275Z",
+      "updated": "2025-06-13T05:18:17.275Z",
+      "SystemProperties": {
+        "P_SubState": "PurchaseReq:Created"
+      },
+      "type": "BID"
+    }
+  }
+]
