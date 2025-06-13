@@ -15,7 +15,8 @@ const DocumentList = () => {
   // Extract workflow type and state from URL
   const workflowType = location.pathname.split('/')[2];
   const queryParams = new URLSearchParams(location.search);
-  const stateFilter = queryParams.get('state') || `${workflowType}-created`; // Default to created state
+  const stateParam = queryParams.get('state');
+const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : stateParam; // Default to created state
   const substate = stateFilter; // substate will be the same as stateFilter
 
   // Memoize handleDelete, handleView, handleEdit to prevent unnecessary re-renders
@@ -37,7 +38,7 @@ const DocumentList = () => {
   }, [navigate, workflowType, substate]);
 
   const handleEdit = useCallback((id) => {
-    navigate(`/procurement/${workflowType}/${id}/edit?state=${stateFilter}`);
+    navigate(`/procurement/${workflowType}/${id}/edit?state=${workflowType}-${stateFilter}`);
   }, [navigate, workflowType, stateFilter]);
 
   useEffect(() => {
@@ -162,15 +163,24 @@ const DocumentList = () => {
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2 className="h4 mb-0">
           Documents
-          {stateFilter && <span className="text-muted ms-2">({stateFilter})</span>}
+          {stateFilter && <span className="text-muted ms-2">({workflowType}-{stateFilter})</span>}
         </h2>
-        <button
-          className="btn btn-primary"
-          onClick={() => navigate(`/procurement/${workflowType}/create?state=${stateFilter}`)}
-        >
-          <i className="bi bi-plus-circle me-2"></i>
-          Create Document
-        </button>
+        <div className="d-flex gap-2">
+          <button
+            className="btn btn-outline-primary"
+            onClick={() => navigate(`/procurement/${workflowType}/upload?state=${workflowType}-${stateFilter}`)}
+          >
+            <i className="bi bi-cloud-arrow-up me-2"></i>
+            Upload Document
+          </button>
+          <button
+            className="btn btn-primary"
+            onClick={() => navigate(`/procurement/${workflowType}/create?state=${workflowType}-${stateFilter}`)}
+          >
+            <i className="bi bi-plus-circle me-2"></i>
+            Create Document
+          </button>
+        </div>
       </div>
 
       {documents && documents.length === 0 ? (

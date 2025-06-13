@@ -1,0 +1,37 @@
+[
+  {
+    "PurchaseReq": {
+      "_id": "6e6ef9c2-3e4e-49c8-8b09-b9ecab07ed83",
+      "OrderedItems": [
+        {
+          "Total": 80004,
+          "IGST": 2,
+          "SGST": 2,
+          "CGST": 2,
+          "Discount": 2,
+          "Quantity": 2,
+          "UnitPrice": 40000,
+          "ItemName": "Dell Laptop"
+        }
+      ],
+      "BillingAddress": {
+        "BillingAddress": "acs"
+      },
+      "ShippingAddress": {
+        "ShippingAddress": "abc"
+      },
+      "DocDetails": {
+        "PaymentTerms": 2,
+        "CurrencyType": "INR",
+        "TransactionType": "Public",
+        "Date": "Thu Jun 12 2025 00:00:00 GMT+0530 (India Standard Time)",
+        "DocumentNumber": "DOC-002"
+      },
+      "BasicInfo": {
+        "Plant": "Plant -002"
+      },
+      "OverallTotal": 80004,
+      "type": "PURCHASEREQ"
+    }
+  }
+]

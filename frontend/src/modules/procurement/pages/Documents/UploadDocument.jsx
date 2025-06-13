@@ -13,7 +13,11 @@ const UploadDocument = () => {
 
   // Extract workflow type from URL path
   // URL format: /procurement/pr/upload -> we want 'pr'
-  const workflow = location.pathname.split('/')[2]; // This will get 'pr' from the URL
+  const workflow= location.pathname.split('/')[2];
+  const queryParams = new URLSearchParams(location.search);
+  const stateParam = queryParams.get('state');
+const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : stateParam; // Default to created state
+  const substate = stateFilter; // This will get 'pr' from the URL
 
   const handleDragEnter = (e) => {
     e.preventDefault();
@@ -94,12 +98,12 @@ const UploadDocument = () => {
       setError(null); // Clear previous errors
       try {
         // Assuming workflow is the state (e.g., 'pr') and substate is 'created' for new uploads
-        const substate = `${workflow}-created`;
+        // const substate = `${workflow}-created`;
         const response = await uploadFile(selectedFile, workflow, substate);
         console.log('Upload successful:', response);
         alert('File uploaded and processed successfully!');
         // Navigate to the listing page after successful upload
-        navigate(`/procurement/${workflow}?state=${substate}`);
+        navigate(`/procurement/${workflow}?state=${workflow}-${substate}`);
       } catch (err) {
         console.error('Error during upload:', err);
         setError(`Failed to upload file: ${err.message}`);

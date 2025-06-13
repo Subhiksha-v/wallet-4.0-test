@@ -1369,12 +1369,18 @@ const stateMachines = {
 
 // Define majorWorkflows dynamically from the state machine's top-level states
 const majorWorkflows = [
-  { name: 'Purchase Requisition', path: '/procurement/pr', shortName: 'PR', workflowPath: 'purchasereq' },
-  { name: 'Contract', path: '/procurement/contract', shortName: 'Contract', workflowPath: 'contract' },
-  { name: 'Orders', path: '/procurement/orders', shortName: 'Orders', workflowPath: 'orders' },
-  { name: 'Invoices', path: '/procurement/invoice', shortName: 'Invoice', workflowPath: 'invoice' },
-  { name: 'Payment', path: '/procurement/payment', shortName: 'Payment', workflowPath: 'payment' },
+  { name: 'Purchase Requisition', path: '/procurement/PurchaseReq', shortName: 'PurchaseReq', workflowPath: 'PurchaseReq' },
+  { name: 'Contract', path: '/procurement/Contract', shortName: 'Contract', workflowPath: 'Contract' },
+  { name: 'Orders', path: '/procurement/Orders', shortName: 'Orders', workflowPath: 'Orders' },
+  { name: 'Invoices', path: '/procurement/Invoice', shortName: 'Invoice', workflowPath: 'Invoice' },
+  { name: 'Payment', path: '/procurement/Payment', shortName: 'Payment', workflowPath: 'Payment' },
 ];
+
+const workflowType = location.pathname.split('/')[2];
+  const queryParams = new URLSearchParams(location.search);
+  const stateParam = queryParams.get('state');
+const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : stateParam; // Default to created state
+  const substate = stateFilter; 
 
 const AppLayout = ({ children }) => {
   const location = useLocation();
@@ -1433,7 +1439,7 @@ const AppLayout = ({ children }) => {
 
   // Function to handle Add button click
   const handleAddClick = () => {
-      const targetPath = `/procurement/${activeWorkflowPath}/create`;
+      const targetPath = `/procurement/${activeWorkflowPath}/create?state=${workflowType}-${stateFilter}`;
       navigate(targetPath);
   };
 
@@ -1441,6 +1447,34 @@ const AppLayout = ({ children }) => {
   const handleTopBarClick = (workflow) => {
       setActiveWorkflow(workflow.name);
       setActiveWorkflowShortName(workflow.shortName);
+      
+      // Get the state machine for the selected workflow
+      const stateMachine = stateMachines[workflow.name];
+      if (stateMachine) {
+        // First try to find the StartAt state and its Start substate
+        const startAtState = stateMachine.StartAt;
+        if (startAtState) {
+          const state = stateMachine.States[startAtState];
+          if (state && state.SubStates) {
+            const startSubState = Object.entries(state.SubStates).find(([_, subState]) => subState.Start);
+            if (startSubState) {
+              const [subStateName] = startSubState;
+              // Navigate to the workflow with the default state
+              navigate(`${workflow.path}?state=${startAtState}-${subStateName}`);
+              return;
+            }
+          }
+        }
+
+        // If no StartAt state with Start substate is found, use the workflow's StartAt state
+        if (startAtState) {
+          // Navigate to the workflow with just the StartAt state
+          navigate(`${workflow.path}?state=${startAtState}`);
+          return;
+        }
+      }
+      
+      // Fallback to default navigation if no suitable state is found
       navigate(workflow.path);
   };
 
@@ -1521,24 +1555,6 @@ const AppLayout = ({ children }) => {
                   </li>
                 );
               })}
-              {/* Upload Button as li */}
-              <li
-                className={`nav-item ${styles.sidebarNavLink} ${location.pathname.endsWith('/upload') ? styles.activeSidebarItem : ''}`}
-                onClick={handleUploadClick}
-                style={{ cursor: 'pointer' }}
-              >
-                <i className="bi bi-cloud-arrow-up me-2"></i>
-                Upload {activeWorkflowShortName}
-              </li>
-              {/* Add Button as li */}
-              <li
-                className={`nav-item ${styles.sidebarNavLink} ${location.pathname.endsWith('/create') ? styles.activeSidebarItem : ''}`}
-                onClick={handleAddClick}
-                style={{ cursor: 'pointer' }}
-              >
-                <i className="bi bi-plus-circle me-2"></i>
-                Add {activeWorkflowShortName}
-              </li>
             </ul>
           </nav>
         </div>

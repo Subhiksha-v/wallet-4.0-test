@@ -26,7 +26,7 @@ const parseStateMachine = (stateMachine) => {
 
   while (currentState) {
     const baseLabel = currentState.Desc || currentStateName;
-    const workflowPath = currentStateName.toLowerCase().replace(/[^a-z0-9]/g, ''); // Simple slug for workflowPath
+    const workflowPath = currentStateName; // Simple slug for workflowPath
 
     // Handle SubStates
     if (currentState.SubStates && typeof currentState.SubStates === 'object' && Object.keys(currentState.SubStates).length > 0) {
@@ -47,7 +47,7 @@ const parseStateMachine = (stateMachine) => {
         // Add the substate to sidebar items
         sidebarItems.push({
           label: `${baseLabel} - ${subStateLabel}`,
-          state: `${workflowPath}-${currentSubStateName.toLowerCase().replace(/[^a-z0-9]/g, '')}`,
+          state: `${workflowPath}-${currentSubStateName}`,
           workflowPath: workflowPath
         });
 
@@ -56,7 +56,7 @@ const parseStateMachine = (stateMachine) => {
           edit: currentState.Props && currentState.Props.Edit,
           flip: currentState.Props && currentState.Props.Flip,
         };
-        actionMaps[`${workflowPath}-${currentSubStateName.toLowerCase().replace(/[^a-z0-9]/g, '')}`] = currentActions;
+        actionMaps[`${workflowPath}-${currentSubStateName}`] = currentActions;
         
         traversedSubStates.push(currentSubStateName);
         currentSubStateName = subState.NextState;

@@ -13,7 +13,8 @@ const UploadDocument = () => {
   // Extract workflow type and state from URL
   const workflowType = location.pathname.split('/')[2];
   const queryParams = new URLSearchParams(location.search);
-  const stateFilter = queryParams.get('state') || `${workflowType}-created`; // Default to created state
+  const stateParam = queryParams.get('state');
+const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : stateParam; // Default to created state
   const substate = stateFilter; // substate will be the same as stateFilter
 
   const onDrop = useCallback(async (acceptedFiles) => {

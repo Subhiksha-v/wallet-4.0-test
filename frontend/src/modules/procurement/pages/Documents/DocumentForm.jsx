@@ -95,7 +95,8 @@ const DocumentForm = () => {
   // Extract workflowType and stateFilter from URL
   const workflowType = location.pathname.split('/')[2];
   const queryParams = new URLSearchParams(location.search);
-  const stateFilter = queryParams.get('state') || `${workflowType}-created`;
+  const stateParam = queryParams.get('state');
+  const stateFilter = stateParam?.includes('-') ? stateParam.split('-')[1] : stateParam;
   const substate = stateFilter; // substate will be the same as stateFilter
 
   const {
@@ -183,14 +184,14 @@ const DocumentForm = () => {
         console.log('Update response:', response);
         if (response) {
         alert('Document updated successfully!');
-          navigate(`/procurement/${workflowType}?state=${stateFilter}`);
+          navigate(`/procurement/${workflowType}?state=${workflowType}-${stateFilter}`);
         }
       } else {
         const response = await createDocument(finalData);
         console.log('Create response:', response);
         if (response) {
         alert('Document created successfully!');
-          navigate(`/procurement/${workflowType}?state=${stateFilter}`);
+          navigate(`/procurement/${workflowType}?state=${workflowType}-${stateFilter}`);
         }
       }
     } catch (err) {
