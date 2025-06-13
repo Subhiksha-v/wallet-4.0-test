@@ -11,7 +11,7 @@ function App() {
     <AppLayout>
       <Routes>
         {/* Redirect root to /procurement/pr */}
-        <Route path="/" element={<Navigate to="/procurement/pr" replace />} />
+        <Route path="/" element={<Navigate to="/procurement/PurchaseReq?state=PurchaseReq-Created" replace />} />
 
         {/* Procurement Routes with workflowType parameter */}
         {/* Using a common pattern /procurement/:workflowType for workflow-specific lists */}
